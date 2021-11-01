@@ -1,0 +1,53 @@
+package com.devsuperior.movieflix.dto;
+
+import com.devsuperior.movieflix.entities.Movie;
+import com.devsuperior.movieflix.entities.Review;
+import com.devsuperior.movieflix.entities.User;
+import java.io.Serializable;
+
+public class ReviewDTO implements Serializable {
+  private static final long serialVersionUID = 1L;
+
+  private Long id;
+  private String text;
+  private Movie movie;
+
+  public ReviewDTO() {
+  }
+
+  public ReviewDTO(final Long id, final String text, final Movie movie) {
+    this.id = id;
+    this.text = text;
+    this.movie = movie;
+  }
+
+  public ReviewDTO(Review entity) {
+    id = entity.getId();
+    text = entity.getText();
+    movie = entity.getMovie();
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(final Long id) {
+    this.id = id;
+  }
+
+  public String getText() {
+    return text;
+  }
+
+  public void setText(final String text) {
+    this.text = text;
+  }
+
+  public Movie getMovie() {
+    return movie;
+  }
+
+  public void setMovie(final Movie movie) {
+    this.movie = movie;
+  }
+}
